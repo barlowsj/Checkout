@@ -65,5 +65,15 @@ namespace Checkout.Unit.Test
             Assert.Equal(expectedResult, basket.OrderTotal());
         }
 
+        [Fact]
+        public void GivenABasketWhenAddingThreeLotsOfProductBThenReturnPromotionalValue()
+        {
+            var expectedResult = 40;
+            basket.AddProduct(new ProductB { Quantity = 3 });
+
+            Assert.Equal(expectedResult, basket.OrderTotal());
+        }
+
+
     }
 }

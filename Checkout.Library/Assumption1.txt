@@ -1,0 +1,13 @@
+﻿All inputs are already validated
+
+All values are in pounds
+
+Products can not have both order together promotions and order quantity promotions.
+
+Order together promotions will always be percentage based and only one is allowed per product.
+
+Order quantity will always be a fixed price for bulk purchases and only one is allowed per product.
+
+The basket total only needs calculating once all items have been added and not after each item is added as the kata says "Items have been added..."
+
+Chosen to use a json input file to store the product values to make the values easily updateable.

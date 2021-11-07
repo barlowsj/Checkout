@@ -10,7 +10,6 @@ namespace Checkout.Library.Product
         public abstract int UnitPrice { get; }
         public abstract int PromotionQuantity { get; }
         public abstract int PromotionPrice { get; }
-
         public abstract double OrderTotal { get; }
 
         public double OrderPrice()

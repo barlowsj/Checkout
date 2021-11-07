@@ -15,5 +15,6 @@ namespace Checkout.Library.Basket
         }
 
         public abstract double OrderTotal();
+        internal abstract double Promotion(List<IProduct> products);
     }
 }
