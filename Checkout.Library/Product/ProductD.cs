@@ -4,15 +4,9 @@
     {
         public ProductD()
         {
-            UnitPrice = int.Parse(Config.GetSection("ProductDUnitPrice").Value);
-            PromotionQuantity = int.Parse(Config.GetSection("ProductDPromQuant").Value);
-            PromotionPrice = int.Parse(Config.GetSection("ProductDPromPrice").Value);
+            PopulateProductValues("ProductDUnitPrice", "ProductDPromQuant", "ProductDPromPrice");
         }
 
-        public override int UnitPrice { get; }
-        public override int PromotionQuantity { get; }
-
-        public override int PromotionPrice { get; }
         public override double OrderTotal { get { return OrderPrice(); } }
 
     }

@@ -7,9 +7,10 @@ namespace Checkout.Library.Product
     {
         public IConfiguration Config { get; set; }
         public int Quantity { get; set; }
-        public abstract int UnitPrice { get; }
-        public abstract int PromotionQuantity { get; }
-        public abstract int PromotionPrice { get; }
+        public int TotalQuantity { get; private set; }
+        public int UnitPrice { get; private set; }
+        public int PromotionQuantity { get; private set; }
+        public int PromotionPrice { get; private set; }
         public abstract double OrderTotal { get; }
 
         public double OrderPrice()
@@ -26,7 +27,13 @@ namespace Checkout.Library.Product
                 .Build();
         }
 
+        internal void PopulateProductValues(string unitPriceKey, string productAPromQuantKey, string productAPromPriceKey)
+        {
+            UnitPrice = int.Parse(Config.GetSection(unitPriceKey).Value);
+            PromotionQuantity = int.Parse(Config.GetSection(productAPromQuantKey).Value);
+            PromotionPrice = int.Parse(Config.GetSection(productAPromPriceKey).Value);
 
+        }
 
     }
 }
