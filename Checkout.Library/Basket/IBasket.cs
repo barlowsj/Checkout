@@ -6,6 +6,6 @@ namespace Checkout.Library.Basket
     {
         void AddProduct(IProduct product);
 
-        double OrderTotal();
+        decimal OrderTotal();
     }
 }

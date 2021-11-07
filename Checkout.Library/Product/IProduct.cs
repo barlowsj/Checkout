@@ -6,6 +6,6 @@
         int UnitPrice { get; }
         int PromotionQuantity { get; }
         int PromotionPrice { get; }
-        double OrderTotal { get; }
+        decimal OrderTotal { get; }
     }
 }

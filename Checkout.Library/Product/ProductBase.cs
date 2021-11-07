@@ -10,11 +10,18 @@ namespace Checkout.Library.Product
         public int UnitPrice { get; private set; }
         public int PromotionQuantity { get; private set; }
         public int PromotionPrice { get; private set; }
-        public double OrderTotal { get { return OrderPrice(); } }
+        public decimal OrderTotal { get { return OrderPrice(); } }
 
-        public double OrderPrice()
+        public virtual decimal Promotion()
         {
-            return UnitPrice * Quantity;
+            return 0;
+        }
+
+        public decimal OrderPrice()
+        {
+            var orderPrice = Promotion();
+
+            return orderPrice > 0 ? orderPrice : UnitPrice * Quantity;
         }
 
         public ProductBase()

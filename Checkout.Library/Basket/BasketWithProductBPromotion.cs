@@ -7,14 +7,14 @@ namespace Checkout.Library.Basket
 {
     public class BasketWithProductBPromotion : BasketBase, IBasket
     {
-        public override double OrderTotal()
+        public override decimal OrderTotal()
         {
             var promotionTotal = Promotion(Items.Where(s => s.GetType() == typeof(ProductB)).ToList());
 
             return promotionTotal + Items.Where(s => s.GetType() != typeof(ProductB)).Select(s => s.OrderTotal).Sum();
         }
 
-        internal override double Promotion(List<IProduct> products)
+        internal override decimal Promotion(List<IProduct> products)
         {
 
             if (products.Count == 0)

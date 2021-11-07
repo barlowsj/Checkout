@@ -14,7 +14,7 @@ namespace Checkout.Library.Basket
                 Items.Add(product);
         }
 
-        public abstract double OrderTotal();
-        internal abstract double Promotion(List<IProduct> products);
+        public abstract decimal OrderTotal();
+        internal abstract decimal Promotion(List<IProduct> products);
     }
 }
