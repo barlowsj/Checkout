@@ -12,9 +12,7 @@
             var qualifyingProductTotal = Quantity / PromotionQuantity;
             var remainingProductsAtUnitPrice = Quantity % PromotionQuantity;
 
-           var promotionPercentage = decimal.Parse(PromotionPrice.ToString()) / 100M;
-
-           //var promotionPercentage = (100 - PromotionPrice) / 100;
+            var promotionPercentage = decimal.Parse(PromotionPrice.ToString()) / 100M;
 
             return ((qualifyingProductTotal * PromotionQuantity) * (UnitPrice - (UnitPrice * promotionPercentage))) + (remainingProductsAtUnitPrice * UnitPrice);
         }
