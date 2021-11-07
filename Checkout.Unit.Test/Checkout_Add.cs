@@ -89,7 +89,7 @@ namespace Checkout.Unit.Test
         }
 
         [Fact]
-        public void GivenABasketWhenAddingOneLotofProductAThreeLotsOfProductBAndOneLotOfProductCThenReturn50()
+        public void GivenABasketWhenAddingOneLotofProductAThreeLotsOfProductBAndOneLotOfProductCThenReturn90()
         {
             var expectedResult = 90;
             basket.AddProduct(new ProductA { Quantity = 1 });
