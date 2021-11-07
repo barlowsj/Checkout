@@ -1,13 +1,12 @@
 using Checkout.Library.Basket;
 using Checkout.Library.Product;
-using System;
 using Xunit;
 
 namespace Checkout.Unit.Test
 {
     public class Checkout_Add
     {
-        private IBasket basket = new BasketWithProductBPromotion();
+        private readonly IBasket basket = new BasketWithProductBPromotion();
 
         [Fact]
         public void GivenABasketWhenAddingAProductOfZeroQuantityThenReturnZero()
