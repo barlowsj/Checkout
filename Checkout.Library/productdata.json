@@ -1,6 +1,18 @@
 {
   "ProductAUnitPrice": "10",
   "ProductAPromQuant": "0",
-  "ProductAPromPrice": "0"
+  "ProductAPromPrice": "0",
+
+  "ProductBUnitPrice": "15",
+  "ProductBPromQuant": "3",
+  "ProductBPromPrice": "40",
+
+  "ProductCUnitPrice": "40",
+  "ProductCPromQuant": "0",
+  "ProductCPromPrice": "0",
+
+  "ProductDUnitPrice": "55",
+  "ProductDPromQuant": "2",
+  "ProductDPromPrice": "25"
 
 }

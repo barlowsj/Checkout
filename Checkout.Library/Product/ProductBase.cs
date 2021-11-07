@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Configuration;
-using System;
 using System.IO;
 
 namespace Checkout.Library.Product
@@ -12,6 +11,13 @@ namespace Checkout.Library.Product
         public abstract int PromotionQuantity { get; }
         public abstract int PromotionPrice { get; }
 
+        public abstract double OrderTotal { get; }
+
+        public double OrderPrice()
+        {
+            return UnitPrice * Quantity;
+        }
+
         public ProductBase()
         {
             var path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
@@ -20,6 +26,8 @@ namespace Checkout.Library.Product
                 .AddJsonFile($"{basePath}Checkout.Library\\productdata.json")
                 .Build();
         }
+
+
 
     }
 }

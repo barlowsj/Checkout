@@ -1,10 +1,14 @@
-﻿namespace Checkout.Library.Basket
+﻿using System.Linq;
+
+namespace Checkout.Library.Basket
 {
     public class BasketWithProductBPromotion : BasketBase, IBasket
     {
         public override double OrderTotal()
         {
-            var orderTotal = 0;
+            double orderTotal = 0;
+
+            orderTotal = Items.Select(s => s.OrderTotal).Sum();
 
             return orderTotal;
         }
