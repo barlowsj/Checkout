@@ -75,5 +75,18 @@ namespace Checkout.Unit.Test
         }
 
 
+        [Fact]
+        public void GivenABasketWhenAddingThreeLotsOfProductBPlusFourIndividualLotsOfProductBThenReturnPromotionalValue()
+        {
+            var expectedResult = 95;
+            basket.AddProduct(new ProductB { Quantity = 3 });
+            basket.AddProduct(new ProductB { Quantity = 1 });
+            basket.AddProduct(new ProductB { Quantity = 1 });
+            basket.AddProduct(new ProductB { Quantity = 1 });
+            basket.AddProduct(new ProductB { Quantity = 1 });
+
+            Assert.Equal(expectedResult, basket.OrderTotal());
+        }
+
     }
 }
