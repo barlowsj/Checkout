@@ -7,8 +7,6 @@
             PopulateProductValues("ProductAUnitPrice", "ProductAPromQuant", "ProductAPromPrice");
         }
 
-        public override double OrderTotal { get { return OrderPrice(); } }
-
     }
 }
 

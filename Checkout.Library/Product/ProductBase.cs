@@ -7,11 +7,10 @@ namespace Checkout.Library.Product
     {
         public IConfiguration Config { get; set; }
         public int Quantity { get; set; }
-        public int TotalQuantity { get; private set; }
         public int UnitPrice { get; private set; }
         public int PromotionQuantity { get; private set; }
         public int PromotionPrice { get; private set; }
-        public abstract double OrderTotal { get; }
+        public double OrderTotal { get { return OrderPrice(); } }
 
         public double OrderPrice()
         {

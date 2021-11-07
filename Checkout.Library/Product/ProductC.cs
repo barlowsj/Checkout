@@ -8,7 +8,5 @@
         }
 
 
-        public override double OrderTotal { get { return OrderPrice(); } }
-
     }
 }
